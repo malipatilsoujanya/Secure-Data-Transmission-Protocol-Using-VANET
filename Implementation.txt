@@ -1,0 +1,28 @@
+from tkinter import *
+from PIL import ImageTk, Image
+
+import os
+
+
+root = Tk()
+root.geometry('1920x1080')
+root.title("Vanet")
+
+
+canv = Canvas(root, width=1920, height=1080, bg='white')
+canv.grid(row=2, column=3)
+img = Image.open('back.png')
+photo = ImageTk.PhotoImage(img)
+canv.create_image(1,1, anchor=NW, image=photo)
+
+def a1():
+    os.system("python dash.py")
+
+
+Button(root, text='Start', width=15, height=2,bg='blue', fg='white', command=a1,font=("bold", 12)).place(x=400, y=500)
+
+
+
+
+
+root.mainloop()
